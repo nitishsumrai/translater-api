@@ -7,10 +7,7 @@ Run the following commands to setup the DB
 
 ```sql
 create database translater;
-create user <your_username> identified with mysql_native_password by <your_password>;
 use translater;
-grant all privileges on translater.* to <your_username>;
-flush privileges;
 ```
 
 ## Setting up the project
