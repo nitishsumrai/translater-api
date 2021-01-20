@@ -9,7 +9,7 @@ const Translation = require('./models/Translater_models/translation')
 app.use(express.urlencoded({ extended: true }))
 app.use('/', require('./routes'))
 
-db.sync({ force: true })
+db.sync()
   .then(() => {
     app.listen(port, function (err) {
       if (err) {

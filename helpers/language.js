@@ -104,7 +104,9 @@ const langs = {
   yo: 'Yoruba',
   zu: 'Zulu'
 }
-
+const listOfSisterLanguages = [['hi', 'kn', 'ta', 'bn'],
+['en', 'la', 'fr', 'it']
+]
 function getCode(desiredLang) {
   if (!desiredLang) {
     return false
@@ -125,7 +127,25 @@ function getCode(desiredLang) {
 function isSupported(desiredLang) {
   return Boolean(getCode(desiredLang))
 }
-
+function getLanguage(code) {
+  return langs[code]
+}
+function getSisterLanguages(givenLanguage) {
+  let sisters
+  listOfSisterLanguages.forEach((Sisters) => {
+    // console.log(Sisters.includes(givenLanguage))
+    if (Sisters.includes(givenLanguage)) {
+      sisters = Sisters
+    }
+  })
+  if (!sisters) {
+    return [givenLanguage]
+  } else {
+    return sisters
+  }
+}
 module.exports = langs
+module.exports.getLanguage = getLanguage
 module.exports.isSupported = isSupported
 module.exports.getCode = getCode
+module.exports.getSisterLanguages = getSisterLanguages

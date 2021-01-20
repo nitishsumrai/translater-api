@@ -10,8 +10,7 @@ const Translation = db.define('translations', {
   },
   text: {
     type: Sequelize.STRING,
-    allowNull: false,
-    unique: true
+    allowNull: false
   },
   language: {
     type: Sequelize.STRING,

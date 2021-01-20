@@ -10,8 +10,12 @@ const Sentence = db.define('sentences', {
   },
   text: {
     type: Sequelize.STRING,
-    allowNull: false,
-    unique: true
+    allowNull: false
+    // unique: true
+  },
+  language: {
+    type: Sequelize.STRING,
+    allowNull: false
   }
 })
 
